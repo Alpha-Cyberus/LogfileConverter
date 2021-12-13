@@ -1,5 +1,0 @@
-import sys
-
-print(sys.version)
-name = input("What is your name? ")
-print("Hello, %s" % name)
