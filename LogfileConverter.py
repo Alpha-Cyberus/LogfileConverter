@@ -4,7 +4,7 @@ import sys
 fileIn = sys.argv[1]
 fName = fileIn
 print(fName)
-
+# Test Comment
 f1 = open(fileIn, encoding ='ISO-8859-1')
 rawData = f1.read()
 f1.close()
