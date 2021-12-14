@@ -1,9 +1,5 @@
 #!/usr/bin/env python3
 
-# For trying to make it accept a drag and dop file.
-# import sys
-# fileIn = sys.argv[1]
-
 def main():
 	rawData, fName = getFileIn()
 
@@ -17,7 +13,6 @@ def main():
 		f2.write(rawData[j:(j+(sizeOfData-1))]+"\n") # Step through one set at a time
 		# if i > 2: break # For quick testing purposes
 	f2.close()
-
 
 def getFileIn():
 	while True:
@@ -34,8 +29,3 @@ def getFileIn():
 	return rawData, fName
 
 main()
-
-
-
-
-
