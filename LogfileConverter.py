@@ -1,15 +1,14 @@
 #!/usr/bin/env python3
-import sys
 
+# For trying to make it accept a drag and dop file.
+# import sys
 # fileIn = sys.argv[1]
 
-print("RUNNING")
-
 def main():
-	rawData, fName = getRaw()
+	rawData, fName = getFileIn()
 
 	out = "{}.log"
-	f2 = open(out.format(fName), "w")
+	f2 = open(out.format(fName), "w") # Name new file same as old one.
 
 	sizeOfData = 200 # This is the size of one set of data
 
@@ -20,10 +19,15 @@ def main():
 	f2.close()
 
 
-def getRaw():
-	fileIn = input("Paste filename with extension: ")
-	# fileIn = sys.argv[1]
-	f1 = open(fileIn, encoding ='ISO-8859-1') # Need this encoding or raw files won't open
+def getFileIn():
+	while True:
+		try:
+			fileIn = input("Paste filename with extension: ")
+			f1 = open(fileIn, encoding ='ISO-8859-1') # Need this encoding or raw files won't open
+			break
+		except FileNotFoundError:
+			print("File not found: Check the name is correct and that it's in the same location as the script.")
+
 	fName = f1.name[:f1.name.find(".")] # Take filename without extension to make matching output file
 	rawData = f1.read()
 	f1.close()
